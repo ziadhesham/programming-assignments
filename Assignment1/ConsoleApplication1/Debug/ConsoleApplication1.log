@@ -1,0 +1,18 @@
+﻿Build started 2018-11-21 10:56:01 PM.
+     1>Project "D:\ASU\4th Comp\1st Term\Networks\Assignment1\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>d:\asu\4th comp\1st term\networks\assignment1\consoleapplication1\consoleapplication1\source.cpp(111): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\asu\4th comp\1st term\networks\assignment1\consoleapplication1\consoleapplication1\source.cpp(232): warning C4390: ';' : empty controlled statement found; is this the intent?
+     1>d:\asu\4th comp\1st term\networks\assignment1\consoleapplication1\consoleapplication1\source.cpp(308): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\visual studio\vc\include\conio.h(131) : see declaration of 'getch'
+     1>d:\asu\4th comp\1st term\networks\assignment1\consoleapplication1\consoleapplication1\source.cpp(299): warning C4101: 'x' : unreferenced local variable
+       Link:
+         D:\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\ASU\4th Comp\1st Term\Networks\Assignment1\ConsoleApplication1\Debug\ConsoleApplication1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\ASU\4th Comp\1st Term\Networks\Assignment1\ConsoleApplication1\Debug\ConsoleApplication1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\ASU\4th Comp\1st Term\Networks\Assignment1\ConsoleApplication1\Debug\ConsoleApplication1.lib" /MACHINE:X86 Debug\Source.obj
+         ConsoleApplication1.vcxproj -> D:\ASU\4th Comp\1st Term\Networks\Assignment1\ConsoleApplication1\Debug\ConsoleApplication1.exe
+     1>Done Building Project "D:\ASU\4th Comp\1st Term\Networks\Assignment1\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.81
