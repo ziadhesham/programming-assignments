@@ -3,7 +3,7 @@
 
 ## Description
 
-Implementation of an error-detection mechanism using the standard CRC algorithm.	
+Implementation of an error-detection mechanism using the standard CRC algorithm.
 
 Features:
 - [x] The Generator Program:
