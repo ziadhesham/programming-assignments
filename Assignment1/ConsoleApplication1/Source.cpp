@@ -6,6 +6,127 @@
 using namespace std;
 
 /////////////////////ahmed code////////////////
+string DIVISION(string divident, string divisor)
+{
+
+	static int callCount = 1;
+
+	// Number of bits to be XORed at a time.
+	int pick = divisor.length();
+
+	// Slicing the divident to appropriate
+	// length for particular step
+	string tmp = divident.substr(0, pick);
+
+
+	while (pick < divident.length())
+	{
+		if (tmp[0] == '1')
+		{
+			// replace the divident by the result
+			// of XOR and pull 1 bit down
+			tmp = XOR(divisor, tmp) + divident[pick];
+			try {
+				tmp = tmp.substr(1);
+			}
+			catch (out_of_range)
+			{
+				cout << "Input error in the DIVISION Function in the call number " << callCount << "!" << endl;
+				callCount++;
+				tmp = "";
+			}
+		}
+		else
+		{
+			// If leftmost bit is '0'
+			// If the leftmost bit of the dividend(or the
+			// part used in each step) is 0, the step cannot
+			// use the regular divisor; we need to use an
+			// all - 0s divisor.
+			string pad;
+			for (unsigned int i = 0; i < tmp.length(); i++)
+			{
+				pad += "0";
+			}
+			tmp = XOR(pad, tmp) + divident[pick];
+			try {
+				tmp = tmp.substr(1);
+			}
+			catch (out_of_range)
+			{
+				cout << "Input error in the DIVISION Function in the call number " << callCount << "!" << endl;
+				callCount++;
+				tmp = "";
+			}
+		}
+
+		// increment pick to move further
+		pick += 1;
+	}
+
+	// For the last n bits, we have to carry it out
+	// normally as increased value of pick will cause
+	// Index Out of Bounds.
+	if (tmp[0] == '1')
+	{
+		tmp = XOR(divisor, tmp);
+		try {
+			tmp = tmp.substr(1);
+		}
+		catch (out_of_range)
+		{
+			cout << "Input error in the DIVISION Function in the call number " << callCount << "!" << endl;
+			callCount++;
+			tmp = "";
+		}
+	}
+	else
+	{
+		string pad;
+		for (unsigned int i = 0; i < tmp.length(); i++)
+		{
+			pad += "0";
+		}
+		tmp = XOR(pad, tmp);
+		try {
+			tmp = tmp.substr(1);
+		}
+		catch (out_of_range)
+		{
+			cout << "Input error in the DIVISION Function in the call number " << callCount << "!" << endl;
+			callCount++;
+			tmp = "";
+		}
+	}
+
+	return tmp;
+}
+
+
+string sent_msg(string msg, string generator)
+{
+	string result = msg;
+	int extrabits = generator.length();
+	for (int i = 0; i<extrabits - 1; i++) 
+	{
+		msg = msg + "0";
+	}
+	// cout << msg << endl;
+	string remainder = DIVISION(msg, generator);
+	result += remainder;
+	// cout << "remainder =" << remainder << endl;
+	// cout << "sent message =" << result << endl;
+	return result;
+}
+
+bool VERIFIER(string sentMessage, string generatorFunction)
+{
+	if (stoi(DIVISION(sentMessage, generatorFunction)) == 0)
+	{
+		return true;
+	}
+	return false;
+}
 
 
 
