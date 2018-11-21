@@ -12,6 +12,63 @@ using namespace std;
 
 /////////////////////////hesham code///////////////////
 
+/*the fn takes the input file name and save up to 2 strings in the 2 strings variables send to it*/
+void FileInput(string FileName, string &frame, string &generator)
+{
+	string x;
+	ifstream myfile;
+	x=generator;
+	myfile.open(FileName);
+	if (myfile.is_open())
+	{
+		if (getline(myfile, frame));
+		if (!getline(myfile, generator) )
+			if(generator=="")
+			generator=x;
+		// ofstream("message_transmitted.txt") << frame << '\n'<<generator;
+		myfile.close();
+	}
+}
+
+
+/*the fn takes the output file name and the transmitted message to be printed in the file and the message to be printed in the console*/
+void OutputFile(string output_file, string transmitted_message = "", string message = "")
+{
+	ofstream myfile;
+	myfile.open(output_file);
+	myfile << transmitted_message << '\n';
+	myfile.close();
+	cout << message << '\n';
+
+}
+
+/*this fn takes the text to be processed on and the number number of the bit to be toggled with counting of bits starts by 1*/
+void Alter(string message, int bit_number/*start counting from one*/,string generatorFunction)
+{
+	FileInput("transmitted_message.txt", message, generatorFunction);
+	if (bit_number>0)
+	{
+		bit_number--;
+		if (message[bit_number] == '0')
+		{
+			message[bit_number] = '1';
+		}
+		else
+		{
+			message[bit_number] = '0';
+		}
+	}
+	else cout << "invalid bit number" << '\n';
+	OutputFile("alter_output.txt", message);
+}
+
+
+void Generator(string &message, string &generatorFunction)
+{
+	FileInput("message_generator.txt", message, generatorFunction);
+	OutputFile("transmitted_message.txt", sent_msg(message, generatorFunction));
+}
+
 
 
 
