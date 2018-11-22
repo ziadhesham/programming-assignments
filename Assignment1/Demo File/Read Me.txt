@@ -1,0 +1,7 @@
+Steps to test the code
+1- Open Debug folder then open message_generator.txt and enter message and generator function as shown in Capture1
+2-Run ConsoleApplication1.exe as shown in Capture2
+3- transmitted_message.txt is created with output of generator as shown in Capture3
+4- choose between verifier and alter programs tp run
+5- if you pick verifier choose which output to run verifier on... output is displayed on terminal as shown on Capture6 and Capture7
+6- if you pick alter choose bit number to alter output is displayed in alter_output.txt shown in Capture4 and Capture5
